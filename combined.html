@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Template</title>
+    <style>
+        /* Enable smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Style for the entire body */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b9b9b9; /* Light gray background for the page */
+        }
+
+        /* Navigation Bar styles */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text color */
+            padding: 20px; /* Padding around the content */
+            text-align: center; /* Center-align the text */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        #calculator {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        #calculator input {
+            padding: 10px;
+            font-size: 18px;
+            width: 100px;
+            margin: 0 10px;
+        }
+
+        #calculateButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #calculateButton:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        /* Paragraph styles */
+        main p {
+            font-size: 16px; /* Font size for readability */
+            line-height: 1.6; /* Line spacing */
+            margin: 20px; /* Space around the paragraph */
+            color: #333; /* Dark text color */
+            background-color: #b9b9b9; /* Light background for emphasis */
+            padding: 15px; /* Padding inside the paragraph box */
+            border-radius: 5px; /* Rounded corners for the paragraph */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333; /* Dark gray background */
+            color: white; /* White text color */
+            padding: 15px 0; /* Vertical padding for spacing */
+            text-align: center; /* Center-align the footer text */
+            margin-top: 20px; /* Space above the footer */
+            font-style: italic; /* Italic text style */
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <h1>header template</h1>
+    </header>
+    <main id="about">
+        <p>test paragraph</p>
+        <div id="calculator">
+            <input type="number" id="num1" placeholder="Enter first number">
+            <span>+</span>
+            <input type="number" id="num2" placeholder="Enter second number">
+            <button id="calculateButton">=</button>
+            <span id="result">Result: </span>
+        </div>
+    </main>
+    <footer id="contact">
+        <p>footer test</p>
+    </footer>
+
+    <script>
+        // Add event listener to the "=" button
+        document.getElementById('calculateButton').addEventListener('click', function () {
+            // Get the values of the two input fields
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            // Check if the inputs are valid numbers
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Perform the addition
+                const sum = num1 + num2;
+
+                // Display the result
+                document.getElementById('result').innerText = `Result: ${sum}`;
+            } else {
+                // Display an error message if inputs are invalid
+                document.getElementById('result').innerText = 'Please enter valid numbers.';
+            }
+        });
+    </script>
+</body>
+
+</html>
