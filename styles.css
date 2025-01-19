@@ -1,20 +1,25 @@
 /* Enable smooth scrolling for the entire page */
 html {
     scroll-behavior: smooth;
+    height: 100%; /* Full height for the html */
 }
+
 /* Style for the entire body */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #b9b9b9;  /* Light gray background for the page */
+    background-color: #b9b9b9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Ensure body takes up at least 100% of screen height */
 }
+
 /* Navigation Bar styles */
 nav {
     background-color: #333;
     padding: 10px 0;
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
 }
 
@@ -39,14 +44,29 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    nav ul {
+        padding: 5px;
+    }
+}
+
 /* Header styles */
 header {
-    background-color: #4CAF50;  /* Green background */
-    color: white;               /* White text color */
-    padding: 20px;              /* Padding around the content */
-    text-align: center;         /* Center-align the text */
-    margin-bottom: 20px;        /* Space below the header */
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
+
+/* Calculator styles */
 #calculator {
     margin-top: 50px;
     padding: 20px;
@@ -80,23 +100,25 @@ header {
     font-weight: bold;
     margin-left: 20px;
 }
+
 /* Paragraph styles */
 main p {
-    font-size: 16px;            /* Font size for readability */
-    line-height: 1.6;           /* Line spacing */
-    margin: 20px;               /* Space around the paragraph */
-    color: #333;                /* Dark text color */
-    background-color: #b9b9b9;  /* Light background for emphasis */
-    padding: 15px;              /* Padding inside the paragraph box */
-    border-radius: 5px;         /* Rounded corners for the paragraph */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
+    background-color: #b9b9b9;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 /* Footer styles */
 footer {
-    background-color: #333;     /* Dark gray background */
-    color: white;               /* White text color */
-    padding: 15px 0;            /* Vertical padding for spacing */
-    text-align: center;         /* Center-align the footer text */
-    margin-top: 20px;           /* Space above the footer */
-    font-style: italic;         /* Italic text style */
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+    font-style: italic;
+    width: 100%;
 }
