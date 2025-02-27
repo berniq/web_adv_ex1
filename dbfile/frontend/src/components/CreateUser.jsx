@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-export default function CreateUser({ onUserAdded }) {
+export default function CreateUser({ onUserAdded, buttonClass = "btn btn-primary" }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -18,7 +18,7 @@ export default function CreateUser({ onUserAdded }) {
       setMessage("User created successfully: " + response.data.name);
       setName("");
       setEmail("");
-      if (onUserAdded) onUserAdded(); // Kutsutaan päivitysfunktiota
+      if (onUserAdded) onUserAdded();
     } catch (error) {
       setMessage("Error: " + (error.response?.data?.error || error.message));
     }
@@ -42,7 +42,7 @@ export default function CreateUser({ onUserAdded }) {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <button type="submit">Create</button>
+        <button type="submit" className={buttonClass}>Create</button>
       </form>
       {message && <p>{message}</p>}
     </div>
