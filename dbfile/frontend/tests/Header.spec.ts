@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 // Define the base URL for the application
-//const appAddress = 'http://localhost:5173';
-
-const appAddress = 'https://net.centria.fi/centraali/';
+const appAddress = 'http://localhost:5173';
 /**
  * Test Case: The app should display the title
  * - Opens the application in the browser
@@ -15,7 +13,7 @@ test('The app should display the title', async ({ page }) => {
     await page.goto(appAddress);
 
     // Find the <h1> element and check if it contains the expected text "User Management"
-    //await expect(page.locator('h1')).toHaveText('User Management');
+    await expect(page.locator('h1')).toHaveText('User Management');
 
     // Pause execution for debugging when running Playwright in headed mode
     // Allows manual inspection of the browser state
