@@ -26,3 +26,4 @@ dist-ssr
 # Edit
 package*
 eslint*
+test-results
