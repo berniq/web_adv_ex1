@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from '@testing-library/react';
 import MyComponent from '../src/components/MyComponent';
-import { test } from 'vitest';
+import { test, expect } from 'vitest';
 
 test('renders Hello, World!', () => {
   render(<MyComponent />);
